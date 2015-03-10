@@ -1,0 +1,39 @@
+使用beaglebone上的ethernet口，进行连接网络
+
+首先使用pc端链接这个网口
+eth1      Link encap:以太网  硬件地址 00:22:19:16:df:c2  
+          inet 地址:150.203.211.85  广播:150.203.211.255  掩码:255.255.254.0
+          inet6 地址: fe80::222:19ff:fe16:dfc2/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  跃点数:1
+          接收数据包:52907 错误:0 丢弃:0 过载:0 帧数:0
+          发送数据包:21088 错误:0 丢弃:0 过载:0 载波:0
+          碰撞:0 发送队列长度:1000 
+          接收字节:45617032 (45.6 MB)  发送字节:2833828 (2.8 MB)
+          中断:21 Memory:febe0000-fec00000 
+
+可以看到 网址是150.203.211.85
+         broadcast是150.203.211.255
+         netmask 255.255.254.0
+
+运行 route -n
+jun@jun-OptiPlex-780:~/git$ route -n
+内核 IP 路由表
+目标            网关            子网掩码        标志  跃点   引用  使用 接口
+0.0.0.0         150.203.210.1   0.0.0.0         UG    0      0        0 eth1
+150.203.210.0   0.0.0.0         255.255.254.0   U     1      0        0 eth1
+192.168.7.0     0.0.0.0         255.255.255.252 U     1      0        0 eth2
+可以发现网关是 150.203.210.1
+
+然后将网线接入beaglebone的网口，修改 /etc/network/interfaces
+auto lo
+iface lo inet loopback               //这是测试用的，回环
+
+auto eth0
+iface eth0 inet static               //静态网址
+	address 150.203.211.85
+	netmask 255.255.254.0
+	network 150.203.210.0
+	broadcast 150.203.211.255
+	gateway 150.203.210.1   
+ 
+     

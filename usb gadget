@@ -1,0 +1,59 @@
+Provides http access to beaglebone black over usb.就是给beaglebone提供USB 连接：mini usb 192.168.7.2的ssh登录，以及网络共享。
+
+1.Install udhcpd (在beaglebone上）
+sudo apt-get install udhcpd
+
+2.Edit: /etc/network/interfaces and add:
+/etc/network/interfaces
+# Ethernet/RNDIS gadget (g_ether)
+# ... or on host side, usbnet and random hwaddr
+iface usb0 inet static
+    address 192.168.7.2
+    netmask 255.255.255.0
+    network 192.168.7.0
+    gateway 192.168.7.1     
+注意：usb0的地址是192.168.7.2 它的gateway是192.168.7.1。因此，它的internet.sh文件将是这样：
+ifconfig usb0 192.168.7.2
+route add default gw 192.168.7.1 
+
+同时pc端的internet.sh文件将是这样的：（这个文件的意识就是将来自192.168.7.1的请求转到eth1中去）
+ifconfig eth2 192.168.7.1
+iptables --table nat --append POSTROUTING --out-interface eth1 -j MASQUERADE
+iptables --append FORWARD --in-interface eth2 -j ACCEPT
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+同时pc端 运行ifconfig如下：（注意eth1才是物理上的网卡）
+eth1      Link encap:以太网  硬件地址 00:22:19:16:df:c2  
+          inet 地址:150.203.211.85  广播:150.203.211.255  掩码:255.255.254.0
+          inet6 地址: fe80::222:19ff:fe16:dfc2/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  跃点数:1
+          接收数据包:52907 错误:0 丢弃:0 过载:0 帧数:0
+          发送数据包:21088 错误:0 丢弃:0 过载:0 载波:0
+          碰撞:0 发送队列长度:1000 
+          接收字节:45617032 (45.6 MB)  发送字节:2833828 (2.8 MB)
+          中断:21 Memory:febe0000-fec00000 
+
+eth2      Link encap:以太网  硬件地址 7c:66:9d:53:91:95  
+          inet 地址:192.168.7.1  广播:192.168.7.3  掩码:255.255.255.252
+          inet6 地址: fe80::7e66:9dff:fe53:9195/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  跃点数:1
+          接收数据包:328 错误:0 丢弃:0 过载:0 帧数:0
+          发送数据包:92 错误:0 丢弃:0 过载:0 载波:0
+          碰撞:0 发送队列长度:1000 
+          接收字节:29353 (29.3 KB)  发送字节:17038 (17.0 KB)
+
+整个过程如下：beaglebone的usb0----》192.168.7.1 网关，它同时也是pc的eth2-----》pc的eth1
+
+
+3.Temp Script:
+wget -c https://raw.github.com/RobertCNelson/tools/master/scripts/beaglebone-black-g-ether-load.sh
+chmod +x beaglebone-black-g-ether-load.sh
+sudo ./beaglebone-black-g-ether-load.sh
+这时，连上mini usb，PC端会出现beaglebone的盘符
+
+4.beaglebone与pc运行各自的internet.sh文件，那么就能ping上8.8.8.8
+5.在beaglebone上修改 /etc/resolv.conf
+nameserver 150.203.1.10 (ANU的DNS服务器）
+
+
+
