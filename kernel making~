@@ -1,0 +1,35 @@
+编译出一个ubuntu kernel+uboot+root file system for beaglebone
+1.sudo apt-get install gcc-arm-linux-gnueabi git-core
+2.mkdir beaglebone
+3.cd beaglebone
+4.git clone git://github.com/RobertCNelson/linux-dev.git
+5.cd linux-dev
+6.more README    应仔细读读这个文件，文件说了，linux-dev主要是script，Build Kernel Image: ./build_kernel.sh
+7. git checkout origin/am33x-v3.2 -b am33x-v3.2
+8. cd ..
+9. git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+10. cd ..
+11. cd linux-dev
+12. cp system.sh.sample system.sh
+13.修改 system.sh
+system.sh是主要的编译脚本。 其中
+###REQUIRED:
+
+#ARM GCC CROSS Compiler:
+#if CC is not set, a known working linaro based gcc compiler will be downloaded 
+and utilized.
+#CC=<enter full path>/bin/arm-none-eabi-
+#CC=<enter full path>/bin/arm-linux-gnueabi-
+CC=/home/jun/beaglebone/arm-2014.05/bin/arm-none-linux-gnueabi-
+这里的CC=。。。。。。。定义了交叉编译的工具在哪。在～/beaglebone/有个目录arm-2014.05,里面就是交叉编译的工具链。
+
+LINUX_GIT=/home/jun/beaglebone/linux-stable/
+这里定义了LINUC_GIT这样就不用去下载linux-stable
+
+
+##For TI: OMAP3/4/AM35xx
+ZRELADDR=0x80008000
+这个针对的是beaglebone，beaglebone就是TI出的AM35系列
+
+14. ./system.sh           编译，然后会出现经典的配置界面
+
