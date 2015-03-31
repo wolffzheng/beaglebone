@@ -1,0 +1,7 @@
+1.首先按照这个链接 http://valentfx.com/wiki/index.php?title=LOGI_-_Skeleton_Editor_-_Project
+规划出skeleton
+2.Export 然后下载那个zip文件，
+3.将文件解压，里面有ucf，以及主要的vhd文件，以及工程xise文件
+4.打开ise,打开工程xise
+5.一开始会说少文件，路径在logi-hard/hdl/wishbone下
+6.然后只需做个wrap,将主要的
