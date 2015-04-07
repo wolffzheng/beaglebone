@@ -1,0 +1,22 @@
+在skeleton生成的文件中，要做些修改：
+1.
+gpio(2 downto 1) =>  gpio_gpio_top_gpio_out_0,
+gpio(0) => open,
+gpio(15 downto 3) => open	
+原始文件如上，在skeleton中定义的gpio component，是16位的gpio。其中它定义为[2：1]为输出，第0位以及其它位开路。因此将其该为：
+gpio(1 downto 0) =>  gpio_gpio_top_gpio_out_0,
+	-- gpio(0) => open,
+	gpio(15 downto 2) => open	
+即[1:0]位输出，[15:2]开路
+2.
+-- Connecting outputs
+LED(1 downto 0) <= (others => 'Z');
+gpio_out(2 downto 1) <= gpio_gpio_top_gpio_out_0;
+gpio_out(0) <= 'Z';
+改为：
+-- Connecting outputs
+LED(1 downto 0) <= (others => 'Z');
+gpio_out(1 downto 0) <= gpio_gpio_top_gpio_out_0;
+-- gpio_out(0) <= 'Z';
+然后进行包装
+

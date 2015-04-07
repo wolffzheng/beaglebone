@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/jun/logibone/logiboneprojects/wishbone_gpio_6/wishbone_gpio_6.ncd
+OUTFILE=/home/jun/logibone/logiboneprojects/wishbone_gpio_6/wishbone_gpio_6.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=/home/jun/logibone/logiboneprojects/wishbone_gpio_6
+LICENSE=WebPack
+USER_INFO=_0_0_1381685376_010

@@ -1,0 +1,320 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Mapping Report File for Design 'wishbone_gpio_6'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
+-pr off -lc off -power off -o wishbone_gpio_6_map.ncd wishbone_gpio_6.ngd
+wishbone_gpio_6.pcf 
+Target Device  : xc6slx9
+Target Package : tqg144
+Target Speed   : -2
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Tue Apr  7 14:29:58 2015
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   11
+Slice Logic Utilization:
+  Number of Slice Registers:                   183 out of  11,440    1%
+    Number used as Flip Flops:                 183
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        123 out of   5,720    2%
+    Number used as logic:                      113 out of   5,720    1%
+      Number using O6 output only:             105
+      Number using O5 output only:               0
+      Number using O5 and O6:                    8
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of   1,440    0%
+    Number used exclusively as route-thrus:     10
+      Number with same-slice register load:     10
+      Number with same-slice carry load:         0
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                    65 out of   1,430    4%
+  Number of MUXCYs used:                         0 out of   2,860    0%
+  Number of LUT Flip Flop pairs used:          198
+    Number with an unused Flip Flop:            39 out of     198   19%
+    Number with an unused LUT:                  75 out of     198   37%
+    Number of fully used LUT-FF pairs:          84 out of     198   42%
+    Number of unique control sets:               4
+    Number of slice register sites lost
+      to control set restrictions:               1 out of  11,440    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        52 out of     102   50%
+    Number of LOCed IOBs:                       50 out of      52   96%
+    IOB Flip Flops:                             35
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       2 out of      16   12%
+    Number used as BUFGs:                        2
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of ILOGIC2/ISERDES2s:                   3 out of     200    1%
+    Number used as ILOGIC2s:                     3
+    Number used as ISERDES2s:                    0
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         3 out of     200    1%
+    Number used as IODELAY2s:                    3
+    Number used as IODRP2s:                      0
+    Number used as IODRP2_MCBs:                  0
+  Number of OLOGIC2/OSERDES2s:                  16 out of     200    8%
+    Number used as OLOGIC2s:                    16
+    Number used as OSERDES2s:                    0
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      16    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            1 out of       2   50%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                2.92
+
+Peak Memory Usage:  669 MB
+Total REAL time to MAP completion:  10 secs 
+Total CPU time to MAP completion:   9 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:MapLib:701 - Signal LED<1> connected to top level port LED<1> has been
+   removed.
+WARNING:MapLib:701 - Signal LED<0> connected to top level port LED<0> has been
+   removed.
+WARNING:Pack:2548 - The register "Master_0/iob_dq_hiz_7" has the property
+   IOB=TRUE, but was not packed into the ILOGIC component. 
+WARNING:Pack:2548 - The register "Master_0/iob_dq_hiz_8" has the property
+   IOB=TRUE, but was not packed into the ILOGIC component. 
+WARNING:Pack:2548 - The register "Master_0/iob_dq_hiz_9" has the property
+   IOB=TRUE, but was not packed into the ILOGIC component. 
+WARNING:Pack:2548 - The register "Master_0/iob_dq_hiz_10" has the property
+   IOB=TRUE, but was not packed into the ILOGIC component. 
+WARNING:Pack:2548 - The register "Master_0/iob_dq_hiz_11" has the property
+   IOB=TRUE, but was not packed into the ILOGIC component. 
+WARNING:Pack:2548 - The register "Master_0/iob_dq_hiz_12" has the property
+   IOB=TRUE, but was not packed into the ILOGIC component. 
+WARNING:Pack:2548 - The register "Master_0/iob_dq_hiz_13" has the property
+   IOB=TRUE, but was not packed into the ILOGIC component. 
+WARNING:Pack:2548 - The register "Master_0/iob_dq_hiz_14" has the property
+   IOB=TRUE, but was not packed into the ILOGIC component. 
+WARNING:Pack:2548 - The register "Master_0/iob_dq_hiz_15" has the property
+   IOB=TRUE, but was not packed into the ILOGIC component. 
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network PB<1>_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 27 more times for the
+   following (max. 5 shown):
+   PB<0>_IBUF,
+   SW<1>_IBUF,
+   SW<0>_IBUF,
+   PMOD1<7>_IBUF,
+   PMOD1<6>_IBUF
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:841 - Changing COMPENSATION attribute from SYSTEM_SYNCHRONOUS to
+   INTERNAL for PLL_ADV PLL_BASE_inst/PLL_ADV.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Place:834 - Only a subset of IOs are locked. Out of 52 IOs, 50 are locked
+   and 2 are not locked. If you would like to print the names of these IOs,
+   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   5 block(s) removed
+   1 block(s) optimized away
+   3 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "LED<1>" is unused and has been removed.
+ Unused block "LED_1_OBUFT" (TRI) removed.
+  The signal "N0_inv" is unused and has been removed.
+   Unused block "XST_VCC" (ONE) removed.
+The signal "LED<0>" is unused and has been removed.
+ Unused block "LED_0_OBUFT" (TRI) removed.
+Unused block "LED<0>" (PAD) removed.
+Unused block "LED<1>" (PAD) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ARD<0>                             | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| ARD<1>                             | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| ARD<2>                             | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| ARD<3>                             | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| ARD<4>                             | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| ARD<5>                             | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| ARD_SCL                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| ARD_SDA                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| GPMC_AD<0>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<1>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<2>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<3>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<4>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<5>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<6>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<7>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<8>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<9>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<10>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<11>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<12>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<13>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<14>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_AD<15>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| GPMC_ADVN                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| GPMC_CLK                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| GPMC_CSN                           | IOB              | INPUT     | LVTTL                |       |          |      | IFF          |          | DEFAULT  |
+| GPMC_OEN                           | IOB              | INPUT     | LVTTL                |       |          |      | IFF          |          | DEFAULT  |
+| GPMC_WEN                           | IOB              | INPUT     | LVTTL                |       |          |      | IFF          |          | DEFAULT  |
+| OSC_FPGA                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| PB<0>                              | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| PB<1>                              | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| PMOD1<0>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD1<1>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD1<2>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD1<3>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD1<4>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD1<5>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD1<6>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD1<7>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD2<0>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD2<1>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD2<2>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD2<3>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD2<4>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD2<5>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD2<6>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| PMOD2<7>                           | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLUP   |          |
+| SW<0>                              | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| SW<1>                              | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| gpio_out<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| gpio_out<1>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

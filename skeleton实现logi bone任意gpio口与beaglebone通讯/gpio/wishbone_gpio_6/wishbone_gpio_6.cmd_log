@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "/home/jun/logibone/logiboneprojects/wishbone_gpio_6/wishbone_gpio_6.xst" -ofn "/home/jun/logibone/logiboneprojects/wishbone_gpio_6/wishbone_gpio_6.syr" 
+xst -intstyle ise -ifn "/home/jun/logibone/logiboneprojects/wishbone_gpio_6/wishbone_gpio_6.xst" -ofn "/home/jun/logibone/logiboneprojects/wishbone_gpio_6/wishbone_gpio_6.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc logibone_ra3.ucf -p xc6slx9-tqg144-2 wishbone_gpio_6.ngc wishbone_gpio_6.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o wishbone_gpio_6_map.ncd wishbone_gpio_6.ngd wishbone_gpio_6.pcf 
+par -w -intstyle ise -ol high -mt off wishbone_gpio_6_map.ncd wishbone_gpio_6.ncd wishbone_gpio_6.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml wishbone_gpio_6.twx wishbone_gpio_6.ncd -o wishbone_gpio_6.twr wishbone_gpio_6.pcf -ucf logibone_ra3.ucf 
+bitgen -intstyle ise -f wishbone_gpio_6.ut wishbone_gpio_6.ncd 

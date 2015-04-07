@@ -1,0 +1,7 @@
+vhdl work "../logi-hard/hdl/wishbone/logi_wishbone_pack.vhd"
+vhdl work "../logi-hard/hdl/utils/logi_utils_pack.vhd"
+vhdl work "../logi-hard/hdl/wishbone/wishbone_intercon.vhd"
+vhdl work "../logi-hard/hdl/wishbone/peripherals/wishbone_gpio.vhd"
+vhdl work "../logi-hard/hdl/wishbone/peripherals/logi_wishbone_peripherals_pack.vhd"
+vhdl work "../logi-hard/hdl/wishbone/gpmc_wishbone_wrapper.vhd"
+vhdl work "wishbone_gpio_6.vhd"
