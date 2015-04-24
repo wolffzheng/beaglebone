@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.xst" -ofn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.syr" 
+xst -intstyle ise -ifn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.xst" -ofn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.syr" 
+xst -intstyle ise -ifn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.xst" -ofn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.syr" 
+xst -intstyle ise -ifn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.xst" -ofn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.syr" 
+xst -intstyle ise -ifn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.xst" -ofn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.syr" 
+xst -intstyle ise -ifn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.xst" -ofn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.syr" 
+xst -intstyle ise -ifn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.xst" -ofn "/home/jun/logibone/logiboneprojects/communication_tmp/wishbone_communication.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc logibone_ra3.ucf -p xc6slx9-tqg144-2 wishbone_communication.ngc wishbone_communication.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc logibone_ra3.ucf -p xc6slx9-tqg144-2 wishbone_communication.ngc wishbone_communication.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o wishbone_communication_map.ncd wishbone_communication.ngd wishbone_communication.pcf 
+par -w -intstyle ise -ol high -mt off wishbone_communication_map.ncd wishbone_communication.ncd wishbone_communication.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml wishbone_communication.twx wishbone_communication.ncd -o wishbone_communication.twr wishbone_communication.pcf -ucf logibone_ra3.ucf 
+bitgen -intstyle ise -f wishbone_communication.ut wishbone_communication.ncd 

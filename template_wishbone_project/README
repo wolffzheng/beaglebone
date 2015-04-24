@@ -1,0 +1,3 @@
+这是创建wishbone 工程的模板
+里面的wishbone_communication.v模块，已经对wishbone进行了必要的包装
+在Instruction.pdf中有模块引脚的说明

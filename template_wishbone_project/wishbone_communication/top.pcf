@@ -1,0 +1,190 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Apr 24 17:47:28 2015
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "GPMC_CLK" LOCATE = SITE "P95" LEVEL 1;
+COMP "GPMC_CSN" LOCATE = SITE "P101" LEVEL 1;
+COMP "GPMC_AD<10>" LOCATE = SITE "P104" LEVEL 1;
+COMP "GPMC_AD<11>" LOCATE = SITE "P94" LEVEL 1;
+COMP "GPMC_AD<12>" LOCATE = SITE "P114" LEVEL 1;
+COMP "LED<0>" LOCATE = SITE "P140" LEVEL 1;
+COMP "GPMC_AD<13>" LOCATE = SITE "P115" LEVEL 1;
+COMP "LED<1>" LOCATE = SITE "P74" LEVEL 1;
+COMP "GPMC_AD<14>" LOCATE = SITE "P93" LEVEL 1;
+COMP "GPMC_AD<15>" LOCATE = SITE "P92" LEVEL 1;
+COMP "GPMC_AD<0>" LOCATE = SITE "P97" LEVEL 1;
+COMP "GPMC_OEN" LOCATE = SITE "P118" LEVEL 1;
+COMP "GPMC_AD<1>" LOCATE = SITE "P98" LEVEL 1;
+COMP "GPMC_AD<2>" LOCATE = SITE "P121" LEVEL 1;
+COMP "GPMC_AD<3>" LOCATE = SITE "P120" LEVEL 1;
+COMP "GPMC_AD<4>" LOCATE = SITE "P99" LEVEL 1;
+COMP "GPMC_AD<5>" LOCATE = SITE "P100" LEVEL 1;
+COMP "GPMC_AD<6>" LOCATE = SITE "P124" LEVEL 1;
+COMP "GPMC_AD<7>" LOCATE = SITE "P123" LEVEL 1;
+COMP "GPMC_AD<8>" LOCATE = SITE "P102" LEVEL 1;
+COMP "GPMC_AD<9>" LOCATE = SITE "P105" LEVEL 1;
+COMP "GPMC_ADVN" LOCATE = SITE "P119" LEVEL 1;
+COMP "OSC_FPGA" LOCATE = SITE "P85" LEVEL 1;
+COMP "GPMC_WEN" LOCATE = SITE "P116" LEVEL 1;
+PIN uu1/u1/PLL_BASE_inst/PLL_ADV_pins<2> = BEL "uu1/u1/PLL_BASE_inst/PLL_ADV"
+        PINNAME CLKIN1;
+TIMEGRP clk50_grp = BEL "uu1/u1/BUFG_1" PIN
+        "uu1/u1/PLL_BASE_inst/PLL_ADV_pins<2>";
+TIMEGRP uu1_u1_gls_clk = BEL "uu1/u1/gpio/wbs_readdata_15" BEL
+        "uu1/u1/gpio/wbs_readdata_14" BEL "uu1/u1/gpio/wbs_readdata_13" BEL
+        "uu1/u1/gpio/wbs_readdata_12" BEL "uu1/u1/gpio/wbs_readdata_11" BEL
+        "uu1/u1/gpio/wbs_readdata_10" BEL "uu1/u1/gpio/wbs_readdata_9" BEL
+        "uu1/u1/gpio/wbs_readdata_8" BEL "uu1/u1/gpio/wbs_readdata_7" BEL
+        "uu1/u1/gpio/wbs_readdata_6" BEL "uu1/u1/gpio/wbs_readdata_5" BEL
+        "uu1/u1/gpio/wbs_readdata_4" BEL "uu1/u1/gpio/wbs_readdata_3" BEL
+        "uu1/u1/gpio/wbs_readdata_2" BEL "uu1/u1/gpio/wbs_readdata_1" BEL
+        "uu1/u1/gpio/wbs_readdata_0" BEL "uu1/u1/gpio/input_15" BEL
+        "uu1/u1/gpio/input_14" BEL "uu1/u1/gpio/input_13" BEL
+        "uu1/u1/gpio/input_12" BEL "uu1/u1/gpio/input_11" BEL
+        "uu1/u1/gpio/input_10" BEL "uu1/u1/gpio/input_9" BEL
+        "uu1/u1/gpio/input_8" BEL "uu1/u1/gpio/input_7" BEL
+        "uu1/u1/gpio/input_6" BEL "uu1/u1/gpio/input_5" BEL
+        "uu1/u1/gpio/input_4" BEL "uu1/u1/gpio/input_3" BEL
+        "uu1/u1/gpio/input_2" BEL "uu1/u1/gpio/input_1" BEL
+        "uu1/u1/gpio/input_0" BEL "uu1/u1/Master_0/address_15" BEL
+        "uu1/u1/Master_0/address_14" BEL "uu1/u1/Master_0/address_13" BEL
+        "uu1/u1/Master_0/address_12" BEL "uu1/u1/Master_0/address_11" BEL
+        "uu1/u1/Master_0/address_10" BEL "uu1/u1/Master_0/address_9" BEL
+        "uu1/u1/Master_0/address_8" BEL "uu1/u1/Master_0/address_7" BEL
+        "uu1/u1/Master_0/address_6" BEL "uu1/u1/Master_0/address_5" BEL
+        "uu1/u1/Master_0/address_4" BEL "uu1/u1/Master_0/address_3" BEL
+        "uu1/u1/Master_0/address_2" BEL "uu1/u1/Master_0/address_1" BEL
+        "uu1/u1/Master_0/address_0" BEL "uu1/u1/Master_0/writedata_15" BEL
+        "uu1/u1/Master_0/writedata_14" BEL "uu1/u1/Master_0/writedata_13" BEL
+        "uu1/u1/Master_0/writedata_12" BEL "uu1/u1/Master_0/writedata_11" BEL
+        "uu1/u1/Master_0/writedata_10" BEL "uu1/u1/Master_0/writedata_9" BEL
+        "uu1/u1/Master_0/writedata_8" BEL "uu1/u1/Master_0/writedata_7" BEL
+        "uu1/u1/Master_0/writedata_6" BEL "uu1/u1/Master_0/writedata_5" BEL
+        "uu1/u1/Master_0/writedata_4" BEL "uu1/u1/Master_0/writedata_3" BEL
+        "uu1/u1/Master_0/writedata_2" BEL "uu1/u1/Master_0/writedata_1" BEL
+        "uu1/u1/Master_0/writedata_0" BEL "uu1/u1/Master_0/address_sync_0_15"
+        BEL "uu1/u1/Master_0/address_sync_0_14" BEL
+        "uu1/u1/Master_0/address_sync_0_13" BEL
+        "uu1/u1/Master_0/address_sync_0_12" BEL
+        "uu1/u1/Master_0/address_sync_0_11" BEL
+        "uu1/u1/Master_0/address_sync_0_10" BEL
+        "uu1/u1/Master_0/address_sync_0_9" BEL
+        "uu1/u1/Master_0/address_sync_0_8" BEL
+        "uu1/u1/Master_0/address_sync_0_7" BEL
+        "uu1/u1/Master_0/address_sync_0_6" BEL
+        "uu1/u1/Master_0/address_sync_0_5" BEL
+        "uu1/u1/Master_0/address_sync_0_4" BEL
+        "uu1/u1/Master_0/address_sync_0_3" BEL
+        "uu1/u1/Master_0/address_sync_0_2" BEL
+        "uu1/u1/Master_0/address_sync_0_1" BEL
+        "uu1/u1/Master_0/address_sync_0_0" BEL
+        "uu1/u1/Master_0/writedata_sync_0_15" BEL
+        "uu1/u1/Master_0/writedata_sync_0_14" BEL
+        "uu1/u1/Master_0/writedata_sync_0_13" BEL
+        "uu1/u1/Master_0/writedata_sync_0_12" BEL
+        "uu1/u1/Master_0/writedata_sync_0_11" BEL
+        "uu1/u1/Master_0/writedata_sync_0_10" BEL
+        "uu1/u1/Master_0/writedata_sync_0_9" BEL
+        "uu1/u1/Master_0/writedata_sync_0_8" BEL
+        "uu1/u1/Master_0/writedata_sync_0_7" BEL
+        "uu1/u1/Master_0/writedata_sync_0_6" BEL
+        "uu1/u1/Master_0/writedata_sync_0_5" BEL
+        "uu1/u1/Master_0/writedata_sync_0_4" BEL
+        "uu1/u1/Master_0/writedata_sync_0_3" BEL
+        "uu1/u1/Master_0/writedata_sync_0_2" BEL
+        "uu1/u1/Master_0/writedata_sync_0_1" BEL
+        "uu1/u1/Master_0/writedata_sync_0_0" BEL "uu1/u1/Master_0/readn" BEL
+        "uu1/u1/Master_0/writen" BEL "uu1/u1/Master_0/csn" BEL
+        "uu1/u1/Master_0/readn_sync_0" BEL "uu1/u1/Master_0/writen_sync_0" BEL
+        "uu1/u1/Master_0/csn_sync_0" BEL "uu1/u1/Master_0/readdata_bridge_15"
+        BEL "uu1/u1/Master_0/readdata_bridge_14" BEL
+        "uu1/u1/Master_0/readdata_bridge_13" BEL
+        "uu1/u1/Master_0/readdata_bridge_12" BEL
+        "uu1/u1/Master_0/readdata_bridge_11" BEL
+        "uu1/u1/Master_0/readdata_bridge_10" BEL
+        "uu1/u1/Master_0/readdata_bridge_9" BEL
+        "uu1/u1/Master_0/readdata_bridge_8" BEL
+        "uu1/u1/Master_0/readdata_bridge_7" BEL
+        "uu1/u1/Master_0/readdata_bridge_6" BEL
+        "uu1/u1/Master_0/readdata_bridge_5" BEL
+        "uu1/u1/Master_0/readdata_bridge_4" BEL
+        "uu1/u1/Master_0/readdata_bridge_3" BEL
+        "uu1/u1/Master_0/readdata_bridge_2" BEL
+        "uu1/u1/Master_0/readdata_bridge_1" BEL
+        "uu1/u1/Master_0/readdata_bridge_0" BEL "uu1/u1/gpio/dir_15" BEL
+        "uu1/u1/gpio/dir_14" BEL "uu1/u1/gpio/dir_13" BEL "uu1/u1/gpio/dir_12"
+        BEL "uu1/u1/gpio/dir_11" BEL "uu1/u1/gpio/dir_10" BEL
+        "uu1/u1/gpio/dir_9" BEL "uu1/u1/gpio/dir_8" BEL "uu1/u1/gpio/dir_7"
+        BEL "uu1/u1/gpio/dir_6" BEL "uu1/u1/gpio/dir_5" BEL
+        "uu1/u1/gpio/dir_4" BEL "uu1/u1/gpio/dir_3" BEL "uu1/u1/gpio/dir_2"
+        BEL "uu1/u1/gpio/dir_1" BEL "uu1/u1/gpio/dir_0" BEL
+        "uu1/u1/gpio/output_15" BEL "uu1/u1/gpio/output_14" BEL
+        "uu1/u1/gpio/output_13" BEL "uu1/u1/gpio/output_12" BEL
+        "uu1/u1/gpio/output_11" BEL "uu1/u1/gpio/output_10" BEL
+        "uu1/u1/gpio/output_9" BEL "uu1/u1/gpio/output_8" BEL
+        "uu1/u1/gpio/output_7" BEL "uu1/u1/gpio/output_6" BEL
+        "uu1/u1/gpio/output_5" BEL "uu1/u1/gpio/output_4" BEL
+        "uu1/u1/gpio/output_3" BEL "uu1/u1/gpio/output_2" BEL
+        "uu1/u1/gpio/output_1" BEL "uu1/u1/gpio/output_0" BEL
+        "uu1/u1/Master_0/writen_1";
+TIMEGRP clk100_grp = BEL "uu1/u1/Master_0/writedata_bridge_15" BEL
+        "uu1/u1/Master_0/writedata_bridge_14" BEL
+        "uu1/u1/Master_0/writedata_bridge_13" BEL
+        "uu1/u1/Master_0/writedata_bridge_12" BEL
+        "uu1/u1/Master_0/writedata_bridge_11" BEL
+        "uu1/u1/Master_0/writedata_bridge_10" BEL
+        "uu1/u1/Master_0/writedata_bridge_9" BEL
+        "uu1/u1/Master_0/writedata_bridge_8" BEL
+        "uu1/u1/Master_0/writedata_bridge_7" BEL
+        "uu1/u1/Master_0/writedata_bridge_6" BEL
+        "uu1/u1/Master_0/writedata_bridge_5" BEL
+        "uu1/u1/Master_0/writedata_bridge_4" BEL
+        "uu1/u1/Master_0/writedata_bridge_3" BEL
+        "uu1/u1/Master_0/writedata_bridge_2" BEL
+        "uu1/u1/Master_0/writedata_bridge_1" BEL
+        "uu1/u1/Master_0/writedata_bridge_0" BEL
+        "uu1/u1/Master_0/address_bridge_15" BEL
+        "uu1/u1/Master_0/address_bridge_14" BEL
+        "uu1/u1/Master_0/address_bridge_13" BEL
+        "uu1/u1/Master_0/address_bridge_12" BEL
+        "uu1/u1/Master_0/address_bridge_11" BEL
+        "uu1/u1/Master_0/address_bridge_10" BEL
+        "uu1/u1/Master_0/address_bridge_9" BEL
+        "uu1/u1/Master_0/address_bridge_8" BEL
+        "uu1/u1/Master_0/address_bridge_7" BEL
+        "uu1/u1/Master_0/address_bridge_6" BEL
+        "uu1/u1/Master_0/address_bridge_5" BEL
+        "uu1/u1/Master_0/address_bridge_4" BEL
+        "uu1/u1/Master_0/address_bridge_3" BEL
+        "uu1/u1/Master_0/address_bridge_2" BEL
+        "uu1/u1/Master_0/address_bridge_1" BEL
+        "uu1/u1/Master_0/address_bridge_0" BEL "GPMC_CLK_BUFGP/BUFG" BEL
+        "uu1/u1/Master_0/iob_readdata_15" BEL
+        "uu1/u1/Master_0/iob_readdata_14" BEL
+        "uu1/u1/Master_0/iob_readdata_13" BEL
+        "uu1/u1/Master_0/iob_readdata_12" BEL
+        "uu1/u1/Master_0/iob_readdata_11" BEL
+        "uu1/u1/Master_0/iob_readdata_10" BEL "uu1/u1/Master_0/iob_readdata_9"
+        BEL "uu1/u1/Master_0/iob_readdata_8" BEL
+        "uu1/u1/Master_0/iob_readdata_7" BEL "uu1/u1/Master_0/iob_readdata_6"
+        BEL "uu1/u1/Master_0/iob_readdata_5" BEL
+        "uu1/u1/Master_0/iob_readdata_4" BEL "uu1/u1/Master_0/iob_readdata_3"
+        BEL "uu1/u1/Master_0/iob_readdata_2" BEL
+        "uu1/u1/Master_0/iob_readdata_1" BEL "uu1/u1/Master_0/iob_dq_hiz" BEL
+        "uu1/u1/Master_0/iob_readdata_0" BEL "uu1/u1/Master_0/iob_dq_hiz_1"
+        BEL "uu1/u1/Master_0/iob_dq_hiz_2" BEL "uu1/u1/Master_0/iob_dq_hiz_3"
+        BEL "uu1/u1/Master_0/iob_dq_hiz_4" BEL "uu1/u1/Master_0/iob_dq_hiz_5"
+        BEL "uu1/u1/Master_0/iob_dq_hiz_6" BEL "uu1/u1/Master_0/iob_dq_hiz_7"
+        BEL "uu1/u1/Master_0/iob_dq_hiz_8" BEL "uu1/u1/Master_0/iob_dq_hiz_9"
+        BEL "uu1/u1/Master_0/iob_dq_hiz_10" BEL
+        "uu1/u1/Master_0/iob_dq_hiz_11" BEL "uu1/u1/Master_0/iob_dq_hiz_12"
+        BEL "uu1/u1/Master_0/iob_dq_hiz_13" BEL
+        "uu1/u1/Master_0/iob_dq_hiz_14" BEL "uu1/u1/Master_0/iob_dq_hiz_15"
+        BEL "uu1/u1/Master_0/csn_bridge" BEL "uu1/u1/Master_0/oen_bridge" BEL
+        "uu1/u1/Master_0/wen_bridge";
+TS_PER_CLK50 = PERIOD TIMEGRP "clk50_grp" 20 ns HIGH 50%;
+TS_PER_CLK100 = PERIOD TIMEGRP "clk100_grp" 20 ns HIGH 50%;
+TS_uu1_u1_gls_clk = PERIOD TIMEGRP "uu1_u1_gls_clk" TS_PER_CLK50 / 2 HIGH 50%;
+SCHEMATIC END;
+
